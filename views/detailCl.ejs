@@ -1,0 +1,148 @@
+<%- include('./layouts/header1') %>
+
+
+
+    <div class="mes-affaires">
+        <div class="box" style="margin-left:20%">
+
+            <% if(affaire.idclient==user.email){%>
+                <p><strong>Dans cette affaire je suis le demandeur</strong></p>
+                <div class="show-more" id="show">
+                    <h4>a propos de moi </h4>
+                    <div>
+                        <h3>Le Client : </h3>
+                        <span class="value">
+                            <%= affaire.client %>
+                        </span>
+                    </div>
+                    <div>
+                        <h3> Document concernant mon affaire:</h3>
+
+                        <p>
+                            <%= affaire.contenuAff1 %>
+                        </p>
+
+                    </div>
+                    <h4>a propos de mon avocat </h4>
+                    <div>
+                        <h3>L'avocat : </h3>
+                        <span class="value">
+                            <%= affaire.demendeur %>
+                        </span>
+                    </div>
+                    <h4>a propos de l'adversaire</h4>
+
+                    <div>
+                        <h3>le nom de l'adversaire : </h3>
+
+                        <span class="value">
+                            <%= affaire.adversaire %>
+                        </span>
+
+                    </div>
+                    <div>
+                        <h3>le nom de l'avocat d'adversaire : </h3>
+                        <span class="value">
+                            <%= affaire.defenseur %>
+                        </span>
+                    </div>
+                    <h4>a propos de la justice</h4>
+                    <div>
+                        <span>l'affaire est déposée au niveau du tribunal <strong>
+                                <%= affaire.tribunalAff %>
+                            </strong> de la wilaya <strong>
+                                <%= affaire.wilayaAff %>
+                            </strong>,
+                            commune <strong>
+                                <%= affaire.communeAff %>
+                            </strong></span>
+
+                        <h3>le juge : </h3>
+                        <strong>
+                            <%= affaire.juge %>
+                        </strong>
+                        <h3>la décision finale : </h3>
+                        <strong>
+                            <%= affaire.decision_public %>
+                        </strong>
+
+                    </div>
+
+                </div>
+                <%}else if(affaire.idadvr==user.email){%>
+
+                    <p><strong>Dans ce affaire je suis le defenseur</strong></p>
+                    <div class="show-more" id="show">
+                        <h4>a propos de moi </h4>
+                        <div>
+                            <h3>Le Client : </h3>
+                            <span class="value">
+                                <%= affaire.adversaire %>
+                            </span>
+                        </div>
+                        <div>
+                            <h3> Document concernant mon affaire:</h3>
+
+                            <p>
+                                <%= affaire.contenuAff2 %>
+                            </p>
+
+                        </div>
+                        <h4>a propos de mon avocat </h4>
+                        <div>
+                            <h3>L'avocat : </h3>
+                            <span class="value">
+                                <%= affaire.defenseur %>
+                            </span>
+                        </div>
+                        <h4>a propos de l'adversaire</h4>
+
+                        <div>
+                            <h3>le nom de l'adversaire : </h3>
+
+                            <span class="value">
+                                <%= affaire.client %>
+                            </span>
+
+                        </div>
+                        <div>
+                            <h3>le nom de l'avocat d'adversaire : </h3>
+                            <span class="value">
+                                <%= affaire.demendeur %>
+                            </span>
+                        </div>
+                        <h4>a propos de la justice</h4>
+                        <div>
+                            <span>l'affaire est déposée au niveau du tribunal <strong>
+                                    <%= affaire.tribunalAff %>
+                                </strong> de la wilaya <strong>
+                                    <%= affaire.wilayaAff %>
+                                </strong>,
+                                commune <strong>
+                                    <%= affaire.communeAff %>
+                                </strong></span>
+
+                            <h3>le juge : </h3>
+                            <strong>
+                                <%= affaire.juge %>
+                            </strong>
+                            <h3>la décision finale : </h3>
+                            <strong>
+                                <%= affaire.decision_public %>
+                            </strong>
+
+                        </div>
+
+                    </div>
+                    <%}%>
+
+
+                        <div>
+
+                        </div>
+        </div>
+    </div>
+
+
+
+    <%- include('./layouts/footer') %>

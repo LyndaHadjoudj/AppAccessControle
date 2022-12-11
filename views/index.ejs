@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <nav style="background-color: transparent;">
+
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <% if (user) { %>
+
+        <% if (user.role==='client' ) { %>
+          <li><a href="/user/profile">Profile</a></li>
+
+          <li><a href="/user/Affaire_Client">Mes Affaires</a></li>
+
+
+          <!-- <li><a href="/user/MesAffaires">Mes Affaires</a></li> -->
+          <% } %>
+            <% if (user.role==='avocat' ) { %>
+              <li><a href="/user/profile">Profile</a></li>
+              <li><a href="/avocats/listAffaires">Mes Affaires</a></li>
+              <li><a href="/avocat/addAffaire">Ajouter une affaire</a></li>
+              <% } %>
+                <% if (user.role==='juge' ) { %>
+                  <li><a href="/juge/profileJuge">Profile</a></li>
+                  <li><a href="/juge/affairejuge">Mes Affaires</a></li>
+                  <li><a href="/juge/Addjuge">Ajouter affaire</a></li>
+                  <% } %>
+                    <li><a href="/auth/logout">Déconnecter</a></li>
+                    <% } else { %>
+                      <li><a href="/auth/register">Inscription</a></li>
+                      <li><a href="/auth/login">Connexion</a></li>
+                      <% } %>
+    </ul>
+  </nav>
+  <main>
+
+
+    <div class="tutorial-info">
+      <video autoplay loop muted plays-inline class="back-video">
+        <source src="vid.mp4" type="video/mp4">
+      </video>
+    </div>

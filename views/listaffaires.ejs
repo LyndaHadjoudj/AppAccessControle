@@ -1,0 +1,39 @@
+<%- include('./layouts/header1') %>
+    <br />
+    <h1 style="margin-left: 40%;">Liste des affaires</h1>
+    <% affaires.forEach(affaire=> {
+        if(affaire.demendeur == avocat.name + " " + avocat.prenom || (affaire.defenseur == avocat.name + " " +
+        avocat.prenom)){%>
+        <div class="mes-affaires">
+            <div class="box">
+                <%if(affaire.demendeur==avocat.name + " " + avocat.prenom){%>
+                    <h3 style="margin-top: 8px; margin-left: 300px; margin-bottom: 20px;">Statut: Demandeur</h3>
+                    <%}else {if(affaire.defenseur==avocat.name + " " + avocat.prenom){%>
+                        <h3 style="margin-top: 8px; margin-left: 300px; margin-bottom: 20px;">Statut: defenseur</h3>
+                        <%}}%>
+                            <h3 style="display:inline;">Affaire numéro :</h3>
+
+                            <%= affaire.codeAff %>
+
+
+                                <br /> <br />
+                                <h3 style="display:inline;">Titre de l'affaire : </h3>
+                                <%= affaire.titleAff %>
+                                    <br><br>
+                                    <h3 style="display:inline;">Date de dépot d'affaire : </h3>
+                                    <%= affaire.date.toLocaleDateString() %>
+
+                                        <br />
+                                        <a href="/avocats/listaffaires/detail/<%= affaire._id %>"><button>Afficher
+                                                détail de
+                                                l'affaire</button></a>
+
+
+
+
+            </div>
+
+        </div>
+        <% }}) %>
+
+            <%- include('./layouts/footer') %>

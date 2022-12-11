@@ -1,0 +1,189 @@
+<%- include('./layouts/header') %>
+  <div class="back">
+    <h1>Inscrivez-vous</h1>
+    <form action="/auth/register" method="post" class="lg-form">
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" value="<%= locals.email ? email : '' %>" />
+      </div>
+      <div>
+        <label for="name">Nom:</label>
+        <input type="text" name="name" id="nom" />
+      </div>
+      <div>
+        <label for="prenom">Prénom :</label>
+        <input type="text" name="prenom" id="prenom" />
+      </div>
+      <div>
+        <label for="adr">Adresse :</label>
+        <input type="text" name="adr" id="adr" />
+      </div>
+      <div>
+        <label for="tel">Numéro de téléphone :</label>
+        <input type="text" name="tel" id="tel" />
+      </div>
+      <div>
+        <label for="password">mot de passe</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <div>
+        <label for="password2">confirmez votre mot de passe</label>
+        <input type="password" name="password2" id="password2" />
+      </div>
+
+      <div>
+        <label for="role">Séléctionner votre Status</label>
+        <select name="role" id="role">
+          <option value="statut">votre statut</option>
+          <option value="avocat">Avocat</option>
+          <option value="juge">Juge</option>
+          <option value="client">Client</option>
+        </select>
+        <section id="Jugee">
+          <div>
+            <label for="Wilaya">Wilaya *</label>
+            <select name="wilaya" required class="form-control">
+              <option value=" "> choisissez la wilaya </option>
+              <option value="01">Adrar</option>
+              <option value="02">Chlef</option>
+              <option value="03">Laghouat</option>
+              <option value="04">Oum El Bouaghi
+              </option>
+              <option value="05">Batna</option>
+              <option value="06">Bejaia</option>
+              <option value="07">Biskra</option>
+              <option value="08">Bechar</option>
+              <option value="09">Blida</option>
+              <option value="10">Bouira</option>
+              <option value="11">Tamanrasset</option>
+              <option value="12">Tebessa</option>
+              <option value="13">Tlemcen</option>
+              <option value="14">Tiaret</option>
+              <option value="15">Tizi Ouzou</option>
+              <option value="16">Alger</option>
+              <option value="17">Djelfa</option>
+              <option value="18">Jijel</option>
+              <option value="19">Setif</option>
+              <option value="20">Saida</option>
+              <option value="21">Skikda</option>
+              <option value="22">Sidi Bel Abbes
+              </option>
+              <option value="23">Annaba</option>
+              <option value="24">Guelma</option>
+              <option value="25">Constantine</option>
+              <option value="26">Medea</option>
+              <option value="27">Mostaganem</option>
+              <option value="28">MSila</option>
+              <option value="29">Mascara</option>
+              <option value="30">Ouargla</option>
+              <option value="31">Oran</option>
+              <option value="32">El Bayadh</option>
+              <option value="33">Illizi</option>
+              <option value="34">Bordj Bou
+                Arreridj
+              </option>
+              <option value="35">Boumerdes</option>
+              <option value="36">El Tarf</option>
+              <option value="37">Tindouf</option>
+              <option value="38">Tissemsilt</option>
+              <option value="39">El Oued</option>
+              <option value="40">Khenchela</option>
+              <option value="41">Souk Ahras</option>
+              <option value="42">Tipaza</option>
+              <option value="43">Mila</option>
+              <option value="44">Ain Defla</option>
+              <option value="45">Naama</option>
+              <option value="46">Ain Temouchent</option>
+              <option value="47">Ghardaia</option>
+              <option value="48">Relizane</option>
+            </select>
+          </div>
+          <label for="Commune">Commune *</label>
+          <select name="commune" required class="form-control">
+            <option value=" "> choisissez la commune</option>
+            <option value="c1">c1</option>
+            <option value="c2">c2</option>
+            <option value="c3">c3</option>
+            <option value="c4">c4</option>
+            <option value="c5">c5</option>
+            <option value="c6">c6</option>
+            <option value="c7">c7</option>
+            <option value="c8">c8</option>
+            <option value="c9">c9</option>
+            <option value="d1">d1</option>
+            <option value="d2">d2</option>
+            <option value="d3">d3</option>
+            <option value="d4">d4</option>
+            <option value="d5">d5</option>
+            <option value="d6">d6</option>
+            <option value="d7">d7</option>
+            <option value="d8">d8</option>
+            <option value="d9">d9</option>
+            <option value="e1">e1</option>
+            <option value="e2">e2</option>
+            <option value="e3">e3</option>
+            <option value="e4">e4</option>
+            <option value="e5">e5</option>
+            <option value="e6">e6</option>
+            <option value="e7">e7</option>
+            <option value="e8">e8</option>
+            <option value="e9">e9</option>
+          </select>
+          <label for="Tribunal">Tribunal *</label>
+          <select name="tribunal" required class="form-control">
+            <option value=" "> le code de tribunal </option>
+            <option value="T1">T1</option>
+            <option value="T2">T2</option>
+            <option value="T3">T3</option>
+            <option value="T4">T4</option>
+            <option value="T5">T5</option>
+            <option value="T6">T6</option>
+            <option value="T7">T7</option>
+            <option value="T8">T8</option>
+            <option value="T9">T9</option>
+            <option value="R1">S1</option>
+            <option value="R2">S2</option>
+            <option value="R3">S3</option>
+            <option value="R4">S4</option>
+            <option value="R5">S5</option>
+            <option value="R6">S6</option>
+            <option value="R7">S7</option>
+            <option value="R8">S8</option>
+            <option value="R9">S9</option>
+            <option value="S1">S1</option>
+            <option value="S2">S2</option>
+            <option value="S3">S3</option>
+            <option value="S4">S4</option>
+            <option value="S5">S5</option>
+            <option value="S6">S6</option>
+            <option value="S7">S7</option>
+            <option value="S8">S8</option>
+            <option value="S9">S9</option>
+          </select>
+      </div>
+      </section>
+      <input type="submit" value="Register" />
+  </div>
+  </form>
+  <div>
+    <p>
+      Vous avez déja un compte? <span><a href="/auth/login">connexion</a></span>
+    </p>
+  </div>
+  <br />
+  <script>
+    var opt = document.getElementById('role')
+    var reJuge = document.getElementById("Jugee");
+
+    opt.addEventListener('change', function handleChange(event) {
+      if (event.target.value === 'juge') {
+        console.log(event.target.value);
+        reJuge.style.display = 'block';
+      } else {
+        reJuge.style.display = 'none';
+      }
+    });
+
+  </script>
+  </div>
+  <%- include('./layouts/footer') %>

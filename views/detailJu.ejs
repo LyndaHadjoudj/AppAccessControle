@@ -1,0 +1,113 @@
+<%- include('./layouts/header1') %>
+
+
+
+    <div class="mes-affaires">
+        <div class="box" style="margin-left:20%">
+
+
+            <form action="/juge/updateaff_juge/<%= affaire._id %>" method="post">
+                <div class="show-more" id="show">
+                    <h4>a propos de l'affaire:</h4>
+
+                    <div>
+                        <h3>le titre: </h3>
+                        <strong>
+                            <%= affaire.titleAff%>
+                        </strong>
+                    </div>
+                    <div>
+                        <h3>le numéro de l'affaire: </h3>
+                        <strong>
+                            <%= affaire.codeAff%>
+                        </strong>
+                    </div>
+
+                    <div>
+                        <h3>le juge : </h3>
+                        <strong>
+                            <%= affaire.juge %>
+                        </strong>
+                    </div>
+
+                    <h4>a propos de demendeur </h4>
+                    <div>
+                        <h3>Le client : </h3>
+
+                        <span class="value">
+                            <%= affaire.client %>
+                        </span>
+
+                    </div>
+                    <div>
+                        <h3>l'avocat de demendeur : </h3>
+                        <span class="value">
+                            <%= affaire.demendeur %>
+                        </span>
+                    </div>
+                    <div>
+                        <h3> son document :</h3>
+
+                        <span class="value">
+                            <%= affaire.contenuAff1 %>
+                        </span>
+
+                    </div>
+                    <h4>a propos de l'adversaire : </h4>
+                    <div>
+                        <h3>le nom de l'adversaire : </h3>
+                        <span class="value">
+                            <%= affaire.adversaire %>
+                        </span>
+                    </div>
+
+
+
+                    <div>
+                        <h3>le nom de l'avocat d'adversaire : </h3>
+                        <span class="value">
+                            <%= affaire.defenseur %>
+                        </span>
+                    </div>
+                    <div>
+                        <h3> son document :</h3>
+
+                        <span class="value">
+                            <%= affaire.contenuAff2 %>
+                        </span>
+
+                    </div>
+                    <h4>a propos de la justice</h4>
+                    <div>
+                        <span>l'affaire est déposée au niveau du tribunal <strong>
+                                <%= affaire.tribunalAff %>
+
+                            </strong> de la wilaya <strong>
+                                <%= affaire.wilayaAff %>
+                            </strong>
+                            commune <strong>
+                                <%= affaire.communeAff %>
+                            </strong></span>
+                    </div>
+
+                    <div>
+                        <h3> Ma decision :</h3>
+                        <textarea name="decision" id="" cols="50" rows="10"> <%=  affaire.decision  %></textarea>
+
+                    </div>
+
+                </div>
+                <button class="modifier" type="submit">modifier</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <%- include('./layouts/footer') %>

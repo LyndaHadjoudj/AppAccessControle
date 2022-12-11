@@ -1,0 +1,51 @@
+<%- include('./layouts/header1') %>
+
+
+  <div class="profile">
+    <img src="/p.png" class="profile-photo" alt="profile photo">
+    <p>
+      <%= person.name%>
+        <%= person.prenom%>
+    </p>
+    <div class="content">
+      <h2>Informations sur vous </h2>
+
+
+      <div class="description">
+        <div class="row">
+          <span>Je suis un : </span>
+          <div>
+            <%= person.role%>
+          </div>
+        </div>
+
+        <div class="row">
+          <span>Adresse</span>
+          <div>
+            <%= person.adr%>
+          </div>
+        </div>
+        <div class="row">
+          <span>Numéro de téléphone</span>
+          <div>
+            <%= person.tel%>
+          </div>
+        </div>
+        <div class="row">
+          <span>Email</span>
+          <div>
+            <%= person.email%>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <%- include('./layouts/footer') %>
