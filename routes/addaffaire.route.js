@@ -71,7 +71,7 @@ router.post(
             const doesExist = await Affaire.findOne({ codeAff: codeAf });
             console.log(doesExist);
             if (!doesExist) {
-                req.flash('warning', 'Affaire doesn t  exists');
+                req.flash('warning', "Affaire n'existe pas");
                 res.redirect('/avocat/addAffaire');
                 return;
             } else {

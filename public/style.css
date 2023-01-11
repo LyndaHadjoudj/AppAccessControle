@@ -8,13 +8,19 @@
 }
 
 body {
+  background-image: linear-gradient(rgba(213, 197, 139, 0.6), rgba(255, 255, 255, 0.4)), url(background.jpg);
 
-  background-image: url(cc.jpg);
+  ;
   font-family: 'Space Mono', monospace;
   font-family: 'Open Sans', sans-serif;
   color: black;
   /*max-width: 760px;*/
   margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  margin: 0px 65px;
+  /* float: right; */
   font-size: 1rem;
 }
 
@@ -82,7 +88,7 @@ main {
 form.lg-form {
   margin: 16px;
   padding: 32px;
-  border: 4px solid #d1d5db;
+  border: 4px solid darkred;
   min-width: 400px;
   border-radius: 16px;
 }
@@ -292,10 +298,15 @@ a {
 
 #c {
   display: inline;
+  margin-right: 170px;
+  border-color: darkred;
+  border-radius: 9px;
 }
 
 #s {
   display: inline;
+  border-color: darkred;
+  border-radius: 9px;
 }
 
 
